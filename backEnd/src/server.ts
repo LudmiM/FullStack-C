@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors'; 
 import dotenv from 'dotenv';
 import {connectDB} from './config/db'
+import router from './router/index.routes';
 
 dotenv.config();
 
@@ -19,6 +20,6 @@ server.use(cors(corsOptions));
 
 server.use(express.json())
 
-//server.use('/', router)
+server.use('/', router)
 
 export default server; 
