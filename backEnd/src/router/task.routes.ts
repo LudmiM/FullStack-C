@@ -4,13 +4,14 @@ import addTask from '../controller/TaskController/addTask';
 import editTask from '../controller/TaskController/editTask';
 import deletedTask from '../controller/TaskController/deletedTask';
 import getTask from '../controller/TaskController/getTask';
+import addTaskValidation from '../validations/addTaskValidation';
 
 const router = Router();
 
 router
     .get('/',getAllTasks)
     .get('/:id',getTask)
-    .post('/',addTask)
+    .post('/',addTaskValidation,addTask)
     .patch('/:id',editTask)
     .delete('/:id',deletedTask)
 
