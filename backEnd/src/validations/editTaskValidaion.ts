@@ -1,8 +1,9 @@
-import { check, body } from 'express-validator';
+import { check, body, param } from 'express-validator';
 import { Request, Response, NextFunction } from 'express';
 import inputsErrors from '../middleware/handleInputsErrors';
 
-export const addTaskValidation = [
+export const editTaskValidation = [
+    param('id').isMongoId().withMessage('ID no valido'),
     check("title")
         .notEmpty().withMessage('El nombre del proyecto es obligatorio'),
     check('status')
@@ -12,4 +13,4 @@ export const addTaskValidation = [
     inputsErrors
 ];
 
-export default addTaskValidation;
+export default editTaskValidation;

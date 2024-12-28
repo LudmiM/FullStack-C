@@ -5,7 +5,7 @@ const editTask = async (req:Request, res:Response)=> {
   try {
     const { id } = req.params;
 
-    const data = await Task.findByIdAndUpdate({ id }, req.body, { new: true });
+    const data = await Task.findByIdAndUpdate( id, req.body, { new: true });
     res.status(201).json({
       data:data,
       status:'true'

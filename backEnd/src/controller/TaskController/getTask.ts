@@ -1,15 +1,23 @@
 import Task, { TaskType } from './../../config/models/Task';
-import type {Response, Request} from 'express'
+import type { Response, Request } from 'express'
 
-const getTask = async (req:Request, res:Response)=> {
+const getTask = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
 
-    const data = await Task.findById({ id });
+    const data = await Task.findById(id);
+
+    if (!data) {
+      const error = new Error('Tarea No encontrada')
+      res.status(404).json({
+        error: error.message,
+        status: 'true'
+      });
+    }
 
     res.status(201).json({
-        data:data,
-        status:'true'
+      data: data,
+      status: 'true'
     });
   } catch (error) {
     console.error(error);
@@ -20,4 +28,4 @@ const getTask = async (req:Request, res:Response)=> {
   }
 };
 
-export default getTask ;
+export default getTask;

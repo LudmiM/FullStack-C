@@ -5,7 +5,7 @@ const deletedTask = async (req:Request, res:Response)=> {
   try {
     const { id } = req.params;
 
-    await Task.findByIdAndDelete({ id });
+    await Task.findByIdAndDelete(id);
 
     res.status(201).json({
       status:'true'

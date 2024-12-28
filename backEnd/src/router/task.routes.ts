@@ -5,14 +5,16 @@ import editTask from '../controller/TaskController/editTask';
 import deletedTask from '../controller/TaskController/deletedTask';
 import getTask from '../controller/TaskController/getTask';
 import addTaskValidation from '../validations/addTaskValidation';
+import idTaskValidation from '../validations/idTaskValidation';
+import editTaskValidation from '../validations/editTaskValidaion';
 
 const router = Router();
 
 router
     .get('/',getAllTasks)
-    .get('/:id',getTask)
+    .get('/:id',idTaskValidation,getTask)
     .post('/',addTaskValidation,addTask)
-    .patch('/:id',editTask)
-    .delete('/:id',deletedTask)
+    .put('/:id',editTaskValidation,editTask)
+    .delete('/:id',idTaskValidation,deletedTask)
 
 export default router;
