@@ -40,6 +40,16 @@ router
  *                   completed:
  *                     type: boolean
  *                     description: Whether the task is completed or not
+ *                   createdAt:
+ *                     type: string
+ *                     format: date-time
+ *                     description: Timestamp when the task was created
+ *                   updatedAt:
+ *                     type: string
+ *                     format: date-time
+ *                     description: Timestamp when the task was last updated
+ *       500:
+ *         description: Server error. Unable to retrieve the task.
  */
     .get('/', getAllTasks)
 
@@ -75,8 +85,18 @@ router
  *                 completed:
  *                   type: boolean
  *                   description: Whether the task is completed or not
+ *                 createdAt:
+ *                   type: string
+ *                   format: date-time
+ *                   description: Timestamp when the task was created
+ *                 updatedAt:
+ *                   type: string
+ *                   format: date-time
+ *                   description: Timestamp when the task was last updated
  *       404:
  *         description: Task not found
+ *       500:
+ *         description: Server error. Unable to retrieve the task.
  */
     .get('/:id', idTaskValidation, getTask)
 
@@ -103,6 +123,8 @@ router
  *               completed:
  *                 type: boolean
  *                 description: Task completion status (optional)
+ *               required:
+ *                 - title
  *     responses:
  *       201:
  *         description: The task was successfully created.
@@ -123,6 +145,18 @@ router
  *                 completed:
  *                   type: boolean
  *                   description: Whether the task is completed or not
+ *                 createdAt:
+ *                   type: string
+ *                   format: date-time
+ *                   description: Timestamp when the task was created
+ *                 updatedAt:
+ *                   type: string
+ *                   format: date-time
+ *                   description: Timestamp when the task was last updated
+ *       400:
+ *         description: Invalid input. The title is required.
+ *       500:
+ *         description: Server error. Unable to create task.
  */
     .post('/', addTaskValidation, addTask)
 
@@ -154,11 +188,25 @@ router
  *               completed:
  *                 type: boolean
  *                 description: Task completion status (optional)
+ *               createdAt:
+ *                 type: string
+ *                 format: date-time
+ *                 description: Timestamp when the task was created
+ *               updatedAt:
+ *                 type: string
+ *                 format: date-time
+ *                 description: Timestamp when the task was last updated
+ *             required:
+ *               - title
  *     responses:
  *       200:
  *         description: The task was successfully updated.
+ *       400:
+ *         description: Invalid input. Missing required fields or incorrect data format.
  *       404:
  *         description: Task not found
+ *       500:
+ *         description: Server error
  */
     .put('/:id', editTaskValidation, editTask)
 
@@ -175,10 +223,12 @@ router
  *         required: true
  *         description: The ID of the task to delete.
  *     responses:
- *       200:
+ *       204:
  *         description: The task was successfully deleted.
  *       404:
  *         description: Task not found
+ *       500:
+ *         description: Server error
  */
     .delete('/:id', idTaskValidation, deletedTask)
 

@@ -1,4 +1,4 @@
-import Task, { TaskType } from './../../config/models/Task';
+import Task from './../../config/models/Task';
 import type { Response, Request } from 'express'
 
 const getTask = async (req: Request, res: Response) => {
@@ -11,17 +11,21 @@ const getTask = async (req: Request, res: Response) => {
       const error = new Error('Tarea No encontrada')
       res.status(404).json({
         error: error.message,
-        status: 'true'
+        message: 'Task get successfully',
+        status: 'success',
       });
     }
 
-    res.status(201).json({
+    res.status(200).json({
       data: data,
-      status: 'true'
+      message: 'Task retrieved successfully',
+      status: 'success',
     });
+
   } catch (error) {
     console.error(error);
     res.status(500).json({
+      status: 'error',
       message: 'Server error',
       error: error
     });

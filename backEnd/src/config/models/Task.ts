@@ -3,20 +3,26 @@ import mongoose, { Schema, Document } from "mongoose";
 export type TaskType = Document & {
     title: string
     description: string
-    status: string
+    completed: boolean;
 }
 
 const TaskSchema: Schema = new Schema({
     title: {
         type: String,
-        require: true,
+        required: true,
         trim: true,
     },
     description: {
         type: String
     },
-    status: { type: String, enum: ['completed', 'pending', 'false'], default: 'false' }
-}) 
+    completed: {
+        type: Boolean,
+        default: false,
+    },
+}, {
+    timestamps: true,
+}
+)
 
 const Task = mongoose.model<TaskType>('Task', TaskSchema)
 

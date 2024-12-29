@@ -8,7 +8,7 @@ export const editTaskValidation = [
         .notEmpty().withMessage('El nombre del proyecto es obligatorio'),
     check('status')
         .optional()
-        .isIn(['completed', 'pending', 'false']).withMessage('El status debe ser uno de: completed, pending, false'),
+        .isIn(['true', 'false']).withMessage('El status debe ser uno de: true / false'),
 
     inputsErrors
 ];
