@@ -133,6 +133,7 @@ El backend ofrece los siguientes endpoints para interactuar con las tareas:
 
 ## **Estructura del Proyecto**
 
+```
 mi-proyecto/
 │
 ├── backend/                      # Código del backend
@@ -156,12 +157,12 @@ mi-proyecto/
 │   ├── .env                       # Variables de entorno
 │
 └── README.md                     # Documentación
+```
 
-
-6. **Contacto**:
+## **Contacto**
 
 Si tienes alguna pregunta o sugerencia, no dudes en contactarme:
 
-- **🔗 LinkedIn**: [Ludmila Lozano](https://www.linkedin.com/in/ludmila-lozano)
+- **🔗 LinkedIn**: [Ludmila Muñoz Loza](https://www.linkedin.com/in/ludmilaml/)
 - **✉️ Correo electrónico**: ludmila.mloza@gmail.com
 - **🐙 GitHub**: [@LudmiM](https://github.com/LudmiM)
