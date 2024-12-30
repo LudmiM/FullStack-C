@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import addTask from '../services/addTask';
 import CreateEditTask from '../components/form/CreateEditTask';
 import AddTask from '../utils/sendData';
+import Back from '../components/back';
 
 export default function AddTaskView() {
   const navigate = useNavigate(); 
@@ -18,8 +19,8 @@ export default function AddTaskView() {
   };
   return (
     <div className='w-full flex flex-col items-center'>
-     {/* <NavForms titleForm='Add project' />*/}
-      <div className="w-full max-w-5xl">
+      <Back/>
+      <div className="w-full max-w-5xl my-8">
         <CreateEditTask onSubmit={handleSubmit} />
       </div>
     </div>

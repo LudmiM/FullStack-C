@@ -5,6 +5,7 @@ import AddTask from "../utils/sendData";
 import { toast } from "react-toastify";
 import editTask from "../services/editTask";
 import getTask from "../services/getTask";
+import Back from "../components/back";
 
 export default function EditTaskView() {
   const navigate = useNavigate();
@@ -42,7 +43,8 @@ export default function EditTaskView() {
   console.log("taskData actualizado:", JSON.stringify(taskData));
   return (
     <div className='w-full flex flex-col items-center'>
-      <div className="w-full max-w-5xl">
+      <Back/>
+      <div className="w-full max-w-5xl  my-8">
         <CreateEditTask onSubmit={handleSubmit} initialData={taskData} />
       </div>
     </div>

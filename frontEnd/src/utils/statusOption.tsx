@@ -1,6 +1,4 @@
 export enum TaskStatus {
-    //Pending = 'false',
-    //Completed = 'true',
     Pending = 0,
     Completed = 1,
  

@@ -170,5 +170,6 @@ mi-proyecto/
 Si tienes alguna pregunta o sugerencia, no dudes en contactarme:
 
 - **🔗 LinkedIn**: [Ludmila Muñoz Loza](https://www.linkedin.com/in/ludmilaml/)
+- **🚀 Proyecto**: [Deploy del Proyecto](https://full-stack-c.vercel.app/)
 - **✉️ Correo electrónico**: ludmila.mloza@gmail.com
 - **🐙 GitHub**: [@LudmiM](https://github.com/LudmiM)
