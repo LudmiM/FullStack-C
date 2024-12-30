@@ -40,7 +40,6 @@ export default function EditTaskView() {
       }
     }
   };
-  console.log("taskData actualizado:", JSON.stringify(taskData));
   return (
     <div className='w-full flex flex-col items-center'>
       <Back/>
