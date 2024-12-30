@@ -3,6 +3,9 @@ import fetchData from './../services/getAll';
 import { toast } from 'react-toastify';
 import task from '../utils/dataResponse';
 import formatDate from '../utils/formatDate';
+import { RiDeleteBin5Fill } from 'react-icons/ri';
+import { FaEdit } from 'react-icons/fa';
+import DropdownMenu from '../components/menuOpen';
 export default function ListTaskView() {
 
     const [tasks, setTasks] = useState<task[]>([]);;
@@ -27,12 +30,12 @@ export default function ListTaskView() {
             <div className="overflow-x-auto bg-white shadow rounded-lg">
                 <div className="hidden sm:block">
                     <table className="min-w-full table-auto">
-                        <thead className="bg-gray-200">
+                        <thead className="bg-my-second-yellow">
                             <tr>
-                                <th className="px-6 py-3 text-left text-sm font-medium text-gray-500">Título</th>
-                                <th className="px-6 py-3 text-left text-sm font-medium text-gray-500">Estado</th>
-                                <th className="px-6 py-3 text-left text-sm font-medium text-gray-500">Fecha de Creación</th>
-                                <th className="px-6 py-3 text-left text-sm font-medium text-gray-500">Acciones</th>
+                                <th className="th-list">Título</th>
+                                <th className="th-list">Estado</th>
+                                <th className="th-list">Fecha de Creación</th>
+                                <th className="th-list">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,8 +49,9 @@ export default function ListTaskView() {
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{formatDate(task.createdAt)} </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-500">
-                                        <button className="text-blue-600 hover:text-blue-900 mr-2">Editar</button>
-                                        <button className="text-red-600 hover:text-red-900">Eliminar</button>
+                                        <button className="text-green-600 hover:text-green-900 mr-2"><FaEdit size={18}/></button>
+                                        <button className="text-red-600 hover:text-red-900"><RiDeleteBin5Fill size={18}/>
+                                        </button>
                                     </td>
                                 </tr>
                             ))}
@@ -67,10 +71,8 @@ export default function ListTaskView() {
                                     </span>
                                 </p>
                                 <p className="text-sm text-gray-500">{formatDate(task.createdAt)} </p>
-                                <div className="mt-2">
-                                    <button className="text-blue-600 hover:text-blue-900 mr-2">Editar</button>
-                                    <button className="text-red-600 hover:text-red-900">Eliminar</button>
-                                </div>
+                                <button><DropdownMenu id={task._id}/></button>
+                           
                             </div>
                         ))}
                     </div>

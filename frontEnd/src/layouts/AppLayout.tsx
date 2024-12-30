@@ -5,7 +5,7 @@ import { ToastContainer } from "react-toastify";
 
 export default function AppLayout() {
     return (
-        <div className="min-h-screen flex flex-col">
+        <div className="w-full min-h-screen flex flex-col">
             <Header />
             <main className="flex-grow">
                 <Outlet />

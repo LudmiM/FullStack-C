@@ -15,4 +15,7 @@
     .he-foo {
         @apply bg-my-yellow text-my-black py-6;
     }
+    .th-list {
+        @apply px-6 py-3 text-left text-sm font-medium text-my-black
+    }
 }
