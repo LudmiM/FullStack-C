@@ -11,7 +11,7 @@ export default function Router() {
             <Routes>
                 <Route element={<AppLayout />} >
                     <Route path='/' element={<ListTaskView />} index />
-                    <Route path='/task/create' element={<AddTaskView />} index />
+                    <Route path='/task/create' element={<AddTaskView />} />
                     <Route path= '/task/edit/:id' element= {<EditTaskView />}/>
                     <Route path= '/task/detail/:id' element= {<DetailTaskView />}/>
                 </Route>
