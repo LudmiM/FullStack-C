@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
     return (
-        <header className="between-flex he-foo">
+        <header className="between-flex he-foo px-6">
             <Link to="/">
                 <h1 className="font-playwrite font-bold text-2xl text-my-black">Task manager</h1>
             </Link>
