@@ -15,7 +15,7 @@ const MenuDelete: React.FC<MenuDeleteProps> = ({ id, onClose }) => {
   const handleDelete = async () => {
     try {
           await deletedTask(id);
-          toast.success("¡Elimino conexito el proyecto!");
+          toast.success("¡Elimino con exito la tarea!");
           navigate(0); 
         } catch (error) {
           toast.error("¡Ocurrió un error!");
@@ -33,7 +33,7 @@ const MenuDelete: React.FC<MenuDeleteProps> = ({ id, onClose }) => {
             <IoIosClose size={24} />
           </button>
         </div>
-        <p className="mt-2 text-sm text-gray-600">Una vez eliminado no podras volver a ver el proyecto</p>
+        <p className="mt-2 text-sm text-gray-600">Una vez eliminado no podras volver a ver la tarea</p>
         <div className="mt-4 flex justify-end gap-4">
           <button 
             onClick={handleDelete} 

@@ -3,12 +3,12 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { TaskStatus, TaskStatusOptions } from '../../utils/statusOption';
 import AddTask from '../../utils/sendData';
 
-interface FormCreateEditProjectProps {
+interface FormCreateEditTaskProps {
   initialData?: AddTask;
   onSubmit: (data: AddTask) => void;
 }
 
-const FormCreateEditProject: React.FC<FormCreateEditProjectProps> = ({ initialData, onSubmit }) => {
+const FormCreateEditTask: React.FC<FormCreateEditTaskProps> = ({ initialData, onSubmit }) => {
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm<AddTask>({
     defaultValues: initialData || {
@@ -89,4 +89,4 @@ const FormCreateEditProject: React.FC<FormCreateEditProjectProps> = ({ initialDa
   );
 };
 
-export default FormCreateEditProject;
+export default FormCreateEditTask;

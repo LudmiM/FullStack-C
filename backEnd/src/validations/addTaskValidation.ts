@@ -4,7 +4,7 @@ import inputsErrors from '../middleware/handleInputsErrors';
 
 export const addTaskValidation = [
     check("title")
-        .notEmpty().withMessage('El nombre del proyecto es obligatorio'),
+        .notEmpty().withMessage('El nombre de la tarea es obligatorio'),
     check('status')
         .optional()
         .isIn(['true', 'false']).withMessage('El status debe ser: true / false'),

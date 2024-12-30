@@ -10,7 +10,7 @@ export default function Header() {
             <Link to="/task/create">
                 <button type="submit" className="bg-my-black text-my-yellow border-2 border-my-black p-2 rounded-md generic-flex">
                     <IoAdd size={24} />
-                    <span className="hidden lg:block">Add project</span>
+                    <span className="hidden lg:block">Add task</span>
                 </button>
             </Link>
         </header>

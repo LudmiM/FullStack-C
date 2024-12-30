@@ -7,6 +7,7 @@ import { RiDeleteBin5Fill } from 'react-icons/ri';
 import { FaEdit } from 'react-icons/fa';
 import DropdownMenu from '../components/menuOpen';
 import MenuDelete from '../components/modalDeleted';
+import { Link } from 'react-router';
 export default function ListTaskView() {
 
     const [tasks, setTasks] = useState<task[]>([]);
@@ -37,9 +38,7 @@ export default function ListTaskView() {
         setDeleteTaskId(null);
     };
 
-
     return (
-
         <div className="container mx-auto px-4 py-6">
             <div className="overflow-x-auto bg-white shadow rounded-lg">
                 <div className="hidden sm:block">
@@ -63,7 +62,7 @@ export default function ListTaskView() {
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{formatDate(task.createdAt)} </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-500">
-                                        <button className="text-green-600 hover:text-green-900 mr-2"><FaEdit size={18} /></button>
+                                        <Link to={`/task/edit/${task._id}`} className="text-green-600 hover:text-green-900 mr-2"><FaEdit size={18} /></Link>
                                         <button className="text-red-600 hover:text-red-900" onClick={() => openDeleteModal(task._id)}>
                                             <RiDeleteBin5Fill size={18} />
                                         </button>

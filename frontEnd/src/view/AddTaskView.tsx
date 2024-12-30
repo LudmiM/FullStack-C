@@ -9,7 +9,7 @@ export default function AddTaskView() {
   const handleSubmit = async (data: AddTask) => {
     try {
       await addTask(data);
-        toast.success("¡Se creo con exito el projexto!");
+        toast.success("¡Se creo con exito la tarea!");
         navigate("/");
     } catch (error) {
       toast.error("¡Ocurrió un error!");

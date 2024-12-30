@@ -5,7 +5,7 @@ import inputsErrors from '../middleware/handleInputsErrors';
 export const editTaskValidation = [
     param('id').isMongoId().withMessage('ID no valido'),
     check("title")
-        .notEmpty().withMessage('El nombre del proyecto es obligatorio'),
+        .notEmpty().withMessage('El nombre de la tarea es obligatorio'),
     check('status')
         .optional()
         .isIn(['true', 'false']).withMessage('El status debe ser uno de: true / false'),
