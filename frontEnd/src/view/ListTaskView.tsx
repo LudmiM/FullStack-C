@@ -50,8 +50,7 @@ export default function ListTaskView() {
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{formatDate(task.createdAt)} </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-500">
                                         <button className="text-green-600 hover:text-green-900 mr-2"><FaEdit size={18}/></button>
-                                        <button className="text-red-600 hover:text-red-900"><RiDeleteBin5Fill size={18}/>
-                                        </button>
+                                        <button className="text-red-600 hover:text-red-900"><RiDeleteBin5Fill size={18}/></button>
                                     </td>
                                 </tr>
                             ))}
