@@ -3,8 +3,6 @@ import fetchData from './../services/getAll';
 import { toast } from 'react-toastify';
 import task from '../utils/dataResponse';
 import formatDate from '../utils/formatDate';
-import { Link } from 'react-router-dom';
-import { IoAdd } from 'react-icons/io5';
 export default function ListTaskView() {
 
     const [tasks, setTasks] = useState<task[]>([]);;
@@ -26,12 +24,6 @@ export default function ListTaskView() {
     return (
 
         <div className="container mx-auto px-4 py-6">
-            <Link to="/task/create">
-                <button type="submit" className="button-custom generic-flex">
-                    <IoAdd size={24} />
-                    <span className="hidden lg:block">Add project</span>
-                </button>
-            </Link>
             <div className="overflow-x-auto bg-white shadow rounded-lg">
                 <div className="hidden sm:block">
                     <table className="min-w-full table-auto">

@@ -2,3 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    .generic-flex {
+        @apply flex flex-wrap items-center;
+    }
+    .between-flex {
+        @apply generic-flex justify-between;
+    }
+    .hover-icon {
+        @apply hover:text-my-black hover:bg-my-second-yellow p-2 rounded-full transition duration-300;
+    }
+    .he-foo {
+        @apply bg-my-yellow text-my-black py-6;
+    }
+}

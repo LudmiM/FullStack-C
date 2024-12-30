@@ -12,10 +12,13 @@ export default function EditTaskView() {
   const [taskData, setTaskData] = useState<AddTask | undefined>(undefined);
 
   useEffect(() => {
-    const fetchTaskData = async () => {
+    console.log('my id is '+id)
+    const getTaskForEdit = async () => {
       if (id) {
+        console.log('my id is '+id)
         try {
           const data = await getTask(id);
+          console.log(JSON.stringify(data?.data))
           setTaskData(data?.data);
         } catch (error) {
           toast.error("¡Ocurrió un error!");
@@ -24,7 +27,7 @@ export default function EditTaskView() {
       }
     };
 
-    fetchTaskData();
+    getTaskForEdit();
   }, [id]);
 
   const handleSubmit = async (data: AddTask) => {
@@ -42,6 +45,7 @@ export default function EditTaskView() {
 
   return (
     <div className='w-full flex flex-col items-center'>
+      <h1>Holiss</h1>
       <div className="w-full max-w-5xl">
         <CreateEditTask onSubmit={handleSubmit} initialData={taskData} />
       </div>
