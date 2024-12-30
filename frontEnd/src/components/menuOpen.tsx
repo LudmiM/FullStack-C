@@ -35,10 +35,10 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ id }) => {
       </button>
 
       {isOpen && (
-        <div className="absolute top-full right-0 mt-2 w-48 bg-neutral-50 shadow-lg rounded-md z-10">
+        <div className="absolute top-full right-0 mt-2 w-48 bg-neutral-50 shadow-lg rounded-md z-20 transform translate-x-0 sm:translate-x-0 sm:left-0">
           <ul className="p-2">
-            <Link to={`/project/edit/${id}`}><li className="li-dropdown-menu"><RiEditBoxLine title='Edit'/><span className="ml-2" title="Edit">Edit</span></li></Link>
-            <li onClick={openDeleteModal} className="li-dropdown-menu"><BiTrashAlt title='Delete'/><span className="ml-2" title="Delete">Delete</span></li>
+            <Link to={`/task/edit/${id}`}><li className="li-dropdown-menu"><RiEditBoxLine title='Edit' size={18}/><span className="ml-2" title="Edit">Edit</span></li></Link>
+            <li onClick={openDeleteModal} className="li-dropdown-menu"><BiTrashAlt title='Delete' size={18}/><span className="ml-2" title="Delete">Delete</span></li>
           </ul>
         </div>
       )}

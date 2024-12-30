@@ -37,13 +37,13 @@ const MenuDelete: React.FC<MenuDeleteProps> = ({ id, onClose }) => {
         <div className="mt-4 flex justify-end gap-4">
           <button 
             onClick={handleDelete} 
-            className="button-custom generic-flex ">
+            className="button-custom-deleted generic-flex ">
             <FaCheck className="mr-2" />
             Confirmo
           </button>
           <button 
             onClick={onClose} 
-            className="generic-flex button-second">
+            className="generic-flex button-second-deleted">
                 <ImCancelCircle className="mr-2" />
                 Cancelar
           </button>
