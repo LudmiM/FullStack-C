@@ -61,7 +61,7 @@ export default function ListTaskView() {
                                         </span>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{formatDate(task.createdAt)} </td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-500">
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-500 generic-flex">
                                         <Link to={`/task/edit/${task._id}`} className="text-green-600 hover:text-green-900 mr-2"><FaEdit size={18} /></Link>
                                         <button className="text-red-600 hover:text-red-900" onClick={() => openDeleteModal(task._id)}>
                                             <RiDeleteBin5Fill size={18} />
