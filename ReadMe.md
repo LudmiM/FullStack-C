@@ -142,15 +142,21 @@ mi-proyecto/
 │   ├── middleware/                # Middlewares
 │   ├── controllers/               # Controladores de las rutas
 │   ├── config/                    # Configuración de la base de datos, modelos y Swagger
-│   ├── db/                        # Configuración de la base de datos
-│   ├── swagger/                   # Configuración de Swagger
-│   ├── models/                    # Modelos de la base de datos
+│   │   ├── db/                    # Configuración de la base de datos
+│   │   ├── swagger/               # Configuración de Swagger
+│   │   ├── models/                # Modelos de la base de datos
 │   ├── router/                    # Rutas de la API
 │   ├── server.js                  # Configuración del servidor
 │   ├── .env                       # Variables de entorno
 │
 ├── frontend/                     # Código del frontend
 │   ├── src/                       # Archivos fuente de React
+│   │   ├── components/            # Componentes
+│   │   ├── context/               # Configuración de estado global
+│   │   ├── layouts/               # Layouts
+│   │   ├── services/              # Peticiones axios
+│   │   ├── utils/                 # Utilidades
+│   │   └── view/                  # Vista
 │   ├── public/                    # Archivos públicos (HTML, imágenes)
 │   ├── package.json               # Dependencias del frontend
 │   └── vite.config.js             # Configuración de Vite
