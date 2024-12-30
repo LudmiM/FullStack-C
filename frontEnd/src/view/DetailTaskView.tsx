@@ -11,10 +11,8 @@ export default function DetailTaskView (){
     const [taskData, setTaskData] = useState<task | undefined>(undefined);
   
     useEffect(() => {
-      console.log('my id is '+id)
       const getTaskForEdit = async () => {
         if (id) {
-          console.log('my id is '+id)
           try {
             const data = await getTask(id);
             console.log(JSON.stringify(data?.data))

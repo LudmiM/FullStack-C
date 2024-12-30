@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { TaskStatusOptions } from '../../utils/statusOption';
+import { TaskStatus, TaskStatusOptions } from '../../utils/statusOption';
 import AddTask from '../../utils/sendData';
 
 interface FormCreateEditProjectProps {
@@ -17,10 +17,13 @@ const FormCreateEditProject: React.FC<FormCreateEditProjectProps> = ({ initialDa
       completed: undefined,
     },
   });
-
   useEffect(() => {
     if (initialData) {
-      reset(initialData);
+      const convertedData = {
+        ...initialData,
+        completed: initialData.completed ? TaskStatus.Completed : TaskStatus.Pending,
+      } as unknown as AddTask;
+      reset(convertedData);
     }
   }, [initialData, reset]);
 

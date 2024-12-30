@@ -6,8 +6,7 @@ async function getTask(taskId: string) {
     const response = await axios.get(`${SERVER}/api/tasks/${taskId}`,);
 
     return {
-      status: response.status,
-      data: response.data,      
+      data: response.data.data,      
     };
   } catch (error) {
     console.error('Error al obtener la tarea:', error);
