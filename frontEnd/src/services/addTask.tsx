@@ -1,8 +1,12 @@
 import axios from 'axios';
 import { SERVER } from '../constants';
 import AddTask from '../utils/sendData';
+import { getToken } from '../utils/getToken';
 
 async function addTask(newTask: AddTask) {
+
+  const token = getToken()
+
   try {
     const response = await axios.post(
       `${SERVER}/api/tasks`, 

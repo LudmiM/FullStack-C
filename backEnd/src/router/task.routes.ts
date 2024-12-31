@@ -7,6 +7,8 @@ import getTask from '../controller/TaskController/getTask';
 import addTaskValidation from '../validations/addTaskValidation';
 import idTaskValidation from '../validations/idTaskValidation';
 import editTaskValidation from '../validations/editTaskValidation';
+import verifyToken from '../middleware/verifyJWT';
+import generateToken from '../middleware/generateJWT';
 
 const router = Router();
 
@@ -51,7 +53,7 @@ router
  *       500:
  *         description: Server error. Unable to retrieve the task.
  */
-    .get('/', getAllTasks)
+    .get('/', generateToken, getAllTasks)
 
 /**
  * @swagger
@@ -98,7 +100,7 @@ router
  *       500:
  *         description: Server error. Unable to retrieve the task.
  */
-    .get('/:id', idTaskValidation, getTask)
+    .get('/:id',verifyToken, idTaskValidation, getTask)
 
 /**
  * @swagger
